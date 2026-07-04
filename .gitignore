@@ -1,0 +1,6 @@
+﻿.agents/
+.codex/
+skills-lock.json
+*.log
+.DS_Store
+Thumbs.db
