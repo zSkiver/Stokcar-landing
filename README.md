@@ -1,19 +1,37 @@
-﻿# Stok Car Landing Page
+# Stok Car Landing Page
 
 Landing page institucional da **Stok Car Centro Automotivo**, em Rio Verde - GO.
 
-O projeto foi criado para apresentar serviços automotivos, reforçar confiança visual da marca e direcionar visitantes para orçamento pelo WhatsApp, Instagram e localização no Google Maps.
+O projeto foi criado para apresentar serviços automotivos, reforçar confiança visual da marca e converter visitantes em orçamento pelo WhatsApp, formulário, Instagram e localização no Google Maps.
 
 ## Visão Geral
 
 - Página estática em HTML, CSS e JavaScript puro
 - Layout responsivo para desktop e mobile
-- Seções de hero, serviços, sobre, processo, Instagram e contato
-- Integração com WhatsApp para orçamento
+- Seções: Hero, Serviços (com ofertas), Sobre, Atendimento, Frotas, Instagram, Dúvidas Frequentes (FAQ) e Contato
+- Sistema de cores com significado (ver [Sistema de Cores](#sistema-de-cores))
+- Fotos reais da loja e dos serviços, não apenas imagens de banco de imagens
+- Credenciais reais: garantia de 90 dias e +8.000 carros atendidos
+- Ofertas: montagem grátis na compra de pneus e combo alinhamento + balanceamento
+- Formas de pagamento (Pix, débito, dinheiro, crédito em até 10x) e atendimento a frotas/empresas
+- Formulário de orçamento exige placa e modelo do veículo, com redirecionamento para o WhatsApp
+- FAQ com dados estruturados (schema.org `FAQPage`) para aparecer no Google
+- Integração com WhatsApp para orçamento (botão flutuante, ações rápidas no mobile e múltiplos CTAs)
 - Feed do Instagram via Elfsight
-- SEO básico com meta tags, Open Graph e JSON-LD
+- SEO com meta tags, Open Graph, JSON-LD (`AutoRepair` + `FAQPage`)
 - Favicons e ícones para navegador/mobile
 - Pronto para deploy na Cloudflare Pages
+
+## Sistema de Cores
+
+As cores da marca (azul, branco, laranja) seguem uma regra fixa — evite usá-las de forma decorativa:
+
+| Cor | Papel | Onde usar |
+|---|---|---|
+| **Azul marinho** | Fundação da marca | Hero, rodapé, cards de destaque intencional (ex: diferenciais em `.feature-card`) |
+| **Branco / claro** | Corpo da página | Fundo das seções de conteúdo (Serviços, Sobre, Atendimento, FAQ, Contato) |
+| **Laranja** | Ação e destaque | Kickers, números, bordas de destaque, botões de ação secundária (formulário, Instagram) |
+| **Verde** | Conversão via WhatsApp | Todo botão que leva para o WhatsApp — nunca usar para outra coisa |
 
 ## Tecnologias
 
@@ -35,6 +53,11 @@ O projeto foi criado para apresentar serviços automotivos, reforçar confiança
 │   ├── patio 2.png
 │   ├── pneus.png
 │   ├── alinhamento.png
+│   ├── balanceamento.jpg
+│   ├── freios.jpg
+│   ├── suspens.jpg
+│   ├── troca de óleo.jpg
+│   ├── diagnostico.jpg
 │   ├── logo FND INVI.png
 │   ├── logo stok.png
 │   └── favicon...
@@ -85,9 +108,11 @@ Depois de conectar o repositório na Cloudflare Pages, cada push na branch `main
 Para atualizar textos, serviços ou links:
 
 - Conteúdo principal: `index.html`
-- Estilos visuais: `style.css`
+- Estilos visuais: `style.css` (organizado por seção, com comentários `/* ==== NOME ==== */` seguindo a mesma ordem do HTML)
 - Interações e formulário: `script.js`
 - Imagens e ícones: `assets/`
+
+Ao adicionar um novo serviço, atualize também: a faixa animada no topo, o dropdown do formulário de orçamento, a lista "Serviços" do rodapé e o `hasOfferCatalog` no JSON-LD do `<head>`.
 
 Após alterar:
 
