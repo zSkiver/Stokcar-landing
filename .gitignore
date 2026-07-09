@@ -1,6 +1,8 @@
 ﻿.agents/
 .codex/
+.claude/
 skills-lock.json
 *.log
 .DS_Store
 Thumbs.db
+**/.impeccable/
